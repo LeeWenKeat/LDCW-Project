@@ -4,6 +4,13 @@ def main():
     cleaning_fee = 0.0
     extra_guest_fee = 0.0
 
+    # Used to store the string names of the accommodation types
+    accommodation_names = {
+        1: "Shared Room",
+        2: "Private Room",
+        3: "Entire Home/Apartment"
+    }
+
     # Add a loop that will keep running until a valid choice is made
     while True:
         # Display clear instructions for the user
@@ -29,10 +36,10 @@ def main():
             # Output error if user entered text/letters instead of a number
             print("\n[Error] Please enter a valid number.\n")
 
-    # The program will only reach this point after the 'break' is triggered
-    print(f"\nYou selected option {property_choice}.")
-    # ... continue with the rest of your logic (nights, guests, calculations) ...
+    # Look up the text name based on the user choice
+    chosen_type = accommodation_names[property_choice]
 
+    print(f"\nYou selected option {property_choice}: {chosen_type}.")
 
 if __name__ == "__main__":
     main()

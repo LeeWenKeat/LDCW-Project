@@ -11,6 +11,15 @@ def main():
         3: "Entire Home/Apartment"
     }
 
+    # Store Locations
+    location_names = {
+        1: "Kuala Lumpur",
+        2: "Melaka",
+        3: "Penang",
+        4: "Johor Bahru",
+        5: "Langkawi"
+    }
+
     # Add a loop that will keep running until a valid choice is made
     while True:
         # Display clear instructions for the user
@@ -40,6 +49,28 @@ def main():
     chosen_type = accommodation_names[property_choice]
 
     print(f"\nYou selected option {property_choice}: {chosen_type}.")
+
+    # Added a menu for user to choose location
+    while True:
+        print("\n===========================================")
+        print("Select Your Destination in Malaysia:")
+        print("1. Kuala Lumpur")
+        print("2. Melaka")
+        print("3. Penang")
+        print("4. Johor Bahru")
+        print("5. Langkawi")
+        
+        try:
+            location_choice = int(input("Enter your choice (1-5): ")) 
+            if location_choice in [1, 2, 3, 4, 5]:
+                break 
+            else:
+                print("\n[Error] Invalid choice. Please select a number from 1 to 5.\n")
+        except ValueError: 
+            print("\n[Error] Please enter a valid number.\n")
+
+    chosen_location = location_names[location_choice]
+    print(f"\nAwesome! You are heading to {chosen_location}.")
 
 if __name__ == "__main__":
     main()

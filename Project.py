@@ -74,16 +74,22 @@ def main():
 
     # 2. Get nights and guests with error handling
     try:
+        # Capture input and attempt to convert to integer
         num_nights = int(input("\nEnter the number of nights: "))
+        # Ensure the booking duration is logically valid (positive number)
         if num_nights <= 0:
             print("\n[Error] Number of nights must be at least 1.")
             return
 
+        # Capture input and attempt to convert to integer
         num_guests = int(input("Enter the number of guests: "))
+        # Ensure the number of guests is logically valid (positive number)
         if num_guests <= 0:
             print("\n[Error] Number of guests must be at least 1.")
             return
+            
     except ValueError:
+        # Handle cases where input is not a valid integer (e.g., text)
         print("\n[Error] Please enter valid numbers for nights and guests.")
         return
 

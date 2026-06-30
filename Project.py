@@ -92,6 +92,17 @@ def main():
         # Handle cases where input is not a valid integer (e.g., text)
         print("\n[Error] Please enter valid numbers for nights and guests.")
         return
+        
+    # 3. Design Logic: Assign rates
+    if property_choice == 1:
+            base_rate = 25.00
+            cleaning_fee = 10.00  
+        elif property_choice == 2:
+            base_rate = 50.00
+            cleaning_fee = 25.00  
+        elif property_choice == 3:
+            base_rate = 120.00
+            cleaning_fee = 60.00
 
 if __name__ == "__main__":
     main()

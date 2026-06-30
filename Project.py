@@ -72,5 +72,20 @@ def main():
     chosen_location = location_names[location_choice]
     print(f"\nAwesome! You are heading to {chosen_location}.")
 
+    # 2. Get nights and guests with error handling
+    try:
+        num_nights = int(input("\nEnter the number of nights: "))
+        if num_nights <= 0:
+            print("\n[Error] Number of nights must be at least 1.")
+            return
+
+        num_guests = int(input("Enter the number of guests: "))
+        if num_guests <= 0:
+            print("\n[Error] Number of guests must be at least 1.")
+            return
+    except ValueError:
+        print("\n[Error] Please enter valid numbers for nights and guests.")
+        return
+
 if __name__ == "__main__":
     main()

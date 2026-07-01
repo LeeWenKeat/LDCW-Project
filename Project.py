@@ -127,9 +127,23 @@ def main():
     accommodation_total = base_rate * num_nights
     total_price = accommodation_total + cleaning_fee + extra_guest_fee
 
-    # Added by Xr: Check-in date input (simple text, no format validation)
-    check_in_date = input("\nEnter your check-in date (e.g., 2026-07-15): ").strip()
-    check_in_time = input("Enter your check-in time (e.g., 14:00): ").strip()
+    # Added by Xr: Check-in date input with format validation (YYYY-MM-DD)
+    while True:
+        check_in_date = input("\nEnter your check-in date (e.g., 2026-07-15): ").strip()
+        try:
+            datetime.strptime(check_in_date, "%Y-%m-%d")
+            break
+        except ValueError:
+            print("\n[Error] Invalid date format. Please use YYYY-MM-DD (e.g., 2026-07-15).\n")
+
+# Added by Xr: Check-in time input with format validation (HH:MM)
+    while True:
+        check_in_time = input("Enter your check-in time (e.g., 14:00): ").strip()
+        try:
+            datetime.strptime(check_in_time, "%H:%M")
+            break
+        except ValueError:
+            print("\n[Error] Invalid time format. Please use HH:MM (e.g., 14:00).\n")
     
     # Added by Xr: Optional special request
     special_request = input("Any special requests? (or press Enter to skip): ").strip()
@@ -162,10 +176,16 @@ def main():
     print("-------------------------------------------")
     print(f"Search Time     : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    # Added by Xr: Booking confirmation interaction
-    confirm = input("\nConfirm booking? (y/n): ").strip().lower()
+   # Added by Xr: Booking confirmation with input validation
+    while True:
+        confirm = input("\nConfirm booking? (y/n): ").strip().lower()
+        if confirm in ["y", "n"]:
+            break
+        else:
+            print("\n[Error] Please enter 'y' to confirm or 'n' to cancel.\n")
+
     if confirm == "y":
-        print(f"\n✅ Booking confirmed, {user_name}! Total: RM {total_price:.2f}. Enjoy your trip!")
+        print(f"\n✅ Booking confirmed, {user_name}! Total: ${total_price:.2f}. Enjoy your trip!")
     else:
         print(f"\n❌ Booking cancelled. Thank you for visiting, {user_name}!")
 

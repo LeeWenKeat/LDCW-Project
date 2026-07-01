@@ -185,9 +185,9 @@ def main():
             print("\n[Error] Please enter 'y' to confirm or 'n' to cancel.\n")
 
     if confirm == "y":
-        print(f"\n✅ Booking confirmed, {user_name}! Total: ${total_price:.2f}. Enjoy your trip!")
+        print(f"\nBooking confirmed, {user_name}! Total: RM{total_price:.2f}. Enjoy your trip!")
     else:
-        print(f"\n❌ Booking cancelled. Thank you for visiting, {user_name}!")
+        print(f"\nBooking cancelled. Thank you for visiting, {user_name}!")
 
     # Added by Xr: Random travel tip at the end
     tips = [

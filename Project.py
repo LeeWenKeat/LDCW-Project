@@ -40,9 +40,9 @@ def main():
         print("      Airbnb Rental Price Estimator        ")
         print("===========================================")
         print("Select Accommodation Type:")
-        print("1. Shared Room (Budget - $25/night)")
-        print("2. Private Room (Standard - $50/night)")
-        print("3. Entire Home/Apartment (Premium - $120/night)")
+        print("1. Shared Room (Budget - RM 25/night)")
+        print("2. Private Room (Standard - RM 50/night)")
+        print("3. Entire Home/Apartment (Premium - RM 120/night)")
 
         try:
             property_choice = int(input("Enter your choice (1-3): ")) # User input 1-3 to choose from menu
